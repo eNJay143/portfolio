@@ -1,7 +1,7 @@
 export const careerInterests = [
     "Fullstack Development",
     "Software Engineering",
-    "Data Sciencist",
+    "Data Scientist",
     "ML Engineering",
     "ML Scientist"
 ];
