@@ -64,13 +64,15 @@ export const HomeSection = () => {
 
             <div className="w-full max-w-5xl flex flex-col items-center text-center gap-12 px-4">
                 {/* Short Introduction with Typewriter Effect */}
-                <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold font-serif tracking-tight flex flex-wrap items-center justify-center min-h-30 md:min-h-25 leading-tight text-center self-center w-full">
-                    <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-blue-500">
-                        {displayedText}
-                    </span>
-                    {isTyping && (
-                        <span className="inline-block w-1 h-[1em] ml-1 bg-primary animate-pulse align-middle shrink-0"></span>
-                    )}
+                <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold font-serif tracking-tight min-h-30 md:min-h-25 leading-tight text-center self-center w-full flex items-center justify-center">
+                    <div className="w-full">
+                        <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-blue-500">
+                            {displayedText}
+                        </span>
+                        {isTyping && (
+                            <span className="inline-block w-1 h-[1em] ml-1 bg-primary animate-pulse align-middle shrink-0"></span>
+                        )}
+                    </div>
                 </h1>
 
                 {/* Two Column Layout for Desktop */}
