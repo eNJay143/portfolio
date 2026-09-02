@@ -48,7 +48,7 @@ const NavBar = () => {
                 className="w-full bg-background/80 backdrop-blur-md border border-border shadow-lg rounded-2xl"
             >
                 <div>
-                    <div className="flex justify-between items-center h-[59px]">
+                    <div className="flex justify-between items-center h-14.75">
                         {/* Left side - Branding and Links */}
                         <div className="flex items-center h-full">
                             <div className="flex shrink-0 items-center cursor-pointer" onClick={() => handleScroll("home")}>
