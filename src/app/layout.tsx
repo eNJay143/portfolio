@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${fontSans.variable} font-serif antialiased w-full min-h-screen flex flex-col items-center`}>
+      <body className={`${fontSans.variable} font-sans antialiased w-full min-h-screen flex flex-col items-center`}>
         <NavBar />
         <main className="w-full flex-1 flex flex-col items-center">
           {children}

@@ -104,7 +104,7 @@ export const HomeSection = () => {
                                 </h3>
                                 <div className="flex flex-wrap justify-center md:justify-start gap-2">
                                     {careerInterests.map((interest, index) => (
-                                        <span key={interest} className="px-4 py-2 rounded-full bg-card border border-border shadow-sm text-sm font-medium hover:border-primary transition-colors cursor-default animate-in fade-in slide-in-from-bottom-7 duration-1000 delay-100" style={{ animationFillMode: 'backwards', padding: "6px", animationDelay: `${1500 + index * 100}ms` }}>
+                                        <span key={interest} className="px-4 py-2 rounded-full bg-card border border-border/70 shadow-sm text-sm font-medium hover:bg-primary/10 hover:border-primary hover:text-primary transition-all cursor-default animate-in fade-in slide-in-from-bottom-7 duration-1000 delay-100" style={{ animationFillMode: 'backwards', padding: "6px", animationDelay: `${1500 + index * 100}ms` }}>
                                             {interest}
                                         </span>
                                     ))}
