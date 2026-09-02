@@ -2,7 +2,7 @@
 // https://tailwindcss.com/docs/font-family
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import NavBar from "./component/navBar";
+import NavBar from "@/components/navBar";
 import "./globals.css";
 
 const fontSans = Inter({
