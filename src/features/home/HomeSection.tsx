@@ -7,6 +7,7 @@ export const HomeSection = () => {
     const fullText = "Building software to solve problems";
     const [displayedText, setDisplayedText] = useState("");
     const [isTyping, setIsTyping] = useState(true);
+    const [isScrollLocked, setIsScrollLocked] = useState(true);
 
     useEffect(() => {
         let i = 0;
@@ -26,6 +27,33 @@ export const HomeSection = () => {
 
         return () => clearTimeout(initialDelay);
     }, []);
+
+    // Unlock scroll 2 seconds after typing finishes to let other animations complete
+    useEffect(() => {
+        if (!isTyping) {
+            const timeout = setTimeout(() => {
+                setIsScrollLocked(false);
+            }, 2000);
+            return () => clearTimeout(timeout);
+        }
+    }, [isTyping]);
+
+    // Lock body scroll while typing and intro animations are playing
+    useEffect(() => {
+        if (isScrollLocked) {
+            document.body.style.overflow = 'hidden';
+            document.documentElement.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+            document.documentElement.style.overflow = 'unset';
+        }
+
+        // Cleanup function in case component unmounts
+        return () => {
+            document.body.style.overflow = 'unset';
+            document.documentElement.style.overflow = 'unset';
+        };
+    }, [isScrollLocked]);
 
     return (
         <section id="home" className="min-h-screen flex flex-col items-center justify-start pb-12 relative overflow-hidden" style={{ paddingTop: '15vh' }}>
