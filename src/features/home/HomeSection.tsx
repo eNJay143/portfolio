@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { careerInterests } from "./data";
 
 export const HomeSection = () => {
     const fullText = "Building software to solve problems";
@@ -74,7 +75,7 @@ export const HomeSection = () => {
                                     Career Focus & Interests
                                 </h3>
                                 <div className="flex flex-wrap justify-center md:justify-start gap-2">
-                                    {["Full-Stack Development", "UI/UX Design", "Artificial Intelligence", "Cloud Computing"].map((interest) => (
+                                    {careerInterests.map((interest) => (
                                         <span key={interest} className="px-4 py-2 rounded-full bg-card border border-border shadow-sm text-sm font-medium hover:border-primary transition-colors cursor-default" style={{ padding: "6px" }}>
                                             {interest}
                                         </span>
