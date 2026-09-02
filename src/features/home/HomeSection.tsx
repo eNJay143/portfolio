@@ -103,13 +103,13 @@ export const HomeSection = () => {
                             </div>
 
                             {/* Name */}
-                            <p className="text-xl md:text-2xl font-sans text-muted-foreground max-w-2xl leading-relaxed text-justify animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-500" style={{ animationFillMode: 'backwards' }}>
+                            <p className="text-xl md:text-2xl font-sans text-foreground/90 max-w-2xl leading-relaxed text-justify animate-in fade-in slide-in-from-bottom-6 duration-1000 delay-500" style={{ animationFillMode: 'backwards' }}>
                                 Norman John N. Bandibas - Regular, BSCS student and Dost Undergraduate Scholar. Providing software solutions that are practical, data-driven, efficient and usable using my skills and knowledge
                             </p>
 
                             {/* Interests / Career Goals */}
                             <div className="flex flex-col items-center md:items-start gap-4 mt-2">
-                                <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground animate-in fade-in slide-in-from-bottom-7 duration-1000 delay-1000" style={{ animationFillMode: 'backwards' }}>
+                                <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground/80 animate-in fade-in slide-in-from-bottom-7 duration-1000 delay-1000" style={{ animationFillMode: 'backwards' }}>
                                     Career Focus & Interests
                                 </h3>
                                 <div className="flex flex-wrap justify-center md:justify-start gap-2">

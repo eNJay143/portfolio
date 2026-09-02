@@ -13,7 +13,7 @@ const NavButton = ({ name, onClick, isHovered, onMouseEnter }: NavButtonProps) =
             onClick={onClick}
             onMouseEnter={onMouseEnter}
             style={{ padding: "10px" }}
-            className="relative flex items-center justify-center rounded-xl bg-transparent text-muted-foreground hover:text-foreground transition-colors text-sm font-medium font-sans cursor-pointer outline-none"
+            className="relative flex items-center justify-center rounded-xl bg-transparent text-foreground/80 hover:text-secondary-foreground transition-colors text-sm font-medium font-sans cursor-pointer outline-none"
         >
             {isHovered && (
                 <motion.div
