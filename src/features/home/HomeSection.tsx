@@ -9,6 +9,14 @@ export const HomeSection = () => {
     const [isTyping, setIsTyping] = useState(true);
     const [isScrollLocked, setIsScrollLocked] = useState(true);
 
+    // Force scroll to top on page load/reload to ensure the intro animation is visible
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        if (typeof window !== 'undefined' && 'scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+    }, []);
+
     useEffect(() => {
         let i = 0;
         // Wait 500ms before starting the typing animation to let the page load
