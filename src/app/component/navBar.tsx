@@ -5,9 +5,18 @@ import NavButton from "./navButton";
 const NavBar = () => {
     const [isDark, setIsDark] = useState(true);
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+    const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
         setIsDark(document.documentElement.classList.contains("dark"));
+
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 20);
+        };
+        
+        handleScroll(); // Initial check
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     const toggleTheme = () => {
@@ -42,12 +51,20 @@ const NavBar = () => {
     };
 
     return (
-        <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8 sticky top-4 mt-4 z-50">
+        <div 
+            className={`w-full mx-auto sticky top-4 mt-4 z-50 transition-all duration-300 ${
+                isScrolled ? "max-w-7xl px-4 sm:px-6 lg:px-8" : "max-w-full px-0"
+            }`}
+        >
             <nav
                 style={{ paddingLeft: "24px", paddingRight: "24px" }}
-                className="w-full bg-background/80 backdrop-blur-md border border-border shadow-lg rounded-2xl"
+                className={`w-full transition-all duration-300 border ${
+                    isScrolled
+                        ? "bg-background border-border shadow-lg rounded-2xl"
+                        : "bg-transparent border-transparent shadow-none rounded-none"
+                }`}
             >
-                <div>
+                <div className="w-full transition-all duration-300">
                     <div className="flex justify-between items-center h-14.75">
                         {/* Left side - Branding and Links */}
                         <div className="flex items-center h-full">
