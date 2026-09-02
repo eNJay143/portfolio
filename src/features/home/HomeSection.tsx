@@ -70,13 +70,13 @@ export const HomeSection = () => {
                             </p>
 
                             {/* Interests / Career Goals */}
-                            <div className="flex flex-col items-center md:items-start gap-4 mt-2 animate-in fade-in slide-in-from-bottom-7 duration-1000 delay-1000" style={{ animationFillMode: 'backwards' }}>
-                                <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+                            <div className="flex flex-col items-center md:items-start gap-4 mt-2">
+                                <h3 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground animate-in fade-in slide-in-from-bottom-7 duration-1000 delay-1000" style={{ animationFillMode: 'backwards' }}>
                                     Career Focus & Interests
                                 </h3>
                                 <div className="flex flex-wrap justify-center md:justify-start gap-2">
-                                    {careerInterests.map((interest) => (
-                                        <span key={interest} className="px-4 py-2 rounded-full bg-card border border-border shadow-sm text-sm font-medium hover:border-primary transition-colors cursor-default" style={{ padding: "6px" }}>
+                                    {careerInterests.map((interest, index) => (
+                                        <span key={interest} className="px-4 py-2 rounded-full bg-card border border-border shadow-sm text-sm font-medium hover:border-primary transition-colors cursor-default animate-in fade-in slide-in-from-bottom-7 duration-1000 delay-100" style={{ animationFillMode: 'backwards', padding: "6px", animationDelay: `${1500 + index * 100}ms` }}>
                                             {interest}
                                         </span>
                                     ))}
