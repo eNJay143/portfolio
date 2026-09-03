@@ -46,9 +46,14 @@ export const AchievementsSection = () => {
                 </div>
 
                 {/* Grid Layout */}
-                <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10 overflow-hidden">
+                <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10 overflow-hidden">
                     {achievementsData.map((category, index) => (
-                        <AchievementCard key={category.id} category={category} index={index} />
+                        <AchievementCard 
+                            key={category.id} 
+                            category={category} 
+                            index={index}
+                            className={category.id === "certs" ? "md:col-span-2" : ""}
+                        />
                     ))}
                 </div>
 

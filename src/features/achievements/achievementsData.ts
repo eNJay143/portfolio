@@ -1,11 +1,16 @@
 import { IconType } from "react-icons";
 import { FaTrophy, FaGraduationCap, FaCertificate } from "react-icons/fa";
 
+export interface Certificate {
+    name: string;
+    pdfLink?: string;
+}
+
 export interface AchievementCategory {
     id: string;
     title: string;
     icon: IconType;
-    items: string[];
+    items: string[] | Certificate[];
 }
 
 export const achievementsData: AchievementCategory[] = [
@@ -33,7 +38,11 @@ export const achievementsData: AchievementCategory[] = [
         title: "Certificates and Accomplishments",
         icon: FaCertificate,
         items: [
-            "More certifications to come..."
+            { name: "Intermediate Git", pdfLink: "/certificates/intermediate-git.pdf" },
+            { name: "Intermediate GitHub Concepts", pdfLink: "/certificates/intermediate-github-concepts.pdf" },
+            { name: "Introduction to Git", pdfLink: "/certificates/introduction-to-git.pdf" },
+            { name: "Introduction to GitHub Concepts", pdfLink: "/certificates/introduction-to-github-concepts.pdf" },
+            { name: "Introduction to SQL", pdfLink: "/certificates/introduction-to-sql.pdf" }
         ]
     }
 ];

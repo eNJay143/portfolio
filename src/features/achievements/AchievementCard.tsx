@@ -12,9 +12,10 @@ gsap.registerPlugin(ScrollTrigger);
 interface AchievementCardProps {
     category: AchievementCategory;
     index: number;
+    className?: string;
 }
 
-export const AchievementCard = ({ category, index }: AchievementCardProps) => {
+export const AchievementCard = ({ category, index, className }: AchievementCardProps) => {
     const cardRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -42,7 +43,7 @@ export const AchievementCard = ({ category, index }: AchievementCardProps) => {
     }, [index]);
 
     return (
-        <div ref={cardRef} className="w-full opacity-0 h-full">
+        <div ref={cardRef} className={cn("w-full opacity-0 h-full", className)}>
             <SpotlightCard 
                 className={cn(
                     "group relative flex flex-col justify-start h-full rounded-3xl backdrop-blur-xl border hover:border-primary/50 transition-all duration-500 overflow-hidden",
@@ -65,14 +66,26 @@ export const AchievementCard = ({ category, index }: AchievementCardProps) => {
                     </h3>
 
                     <div className="flex flex-col gap-4 mt-6">
-                        {category.items.map((item, i) => (
-                            <div key={i} className="flex items-start gap-3 group/item">
-                                <div className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover/item:bg-primary transition-colors mt-2 shrink-0" />
-                                <p className="text-foreground/80 font-medium leading-relaxed group-hover/item:text-foreground transition-colors text-sm md:text-base">
-                                    {item}
-                                </p>
-                            </div>
-                        ))}
+                        {category.items.map((item, i) => {
+                            const isCert = typeof item === "object" && item !== null;
+                            const text = isCert ? (item as any).name : item as string;
+                            const link = isCert ? (item as any).pdfLink : undefined;
+
+                            return (
+                                <div key={i} className="flex items-start gap-3 group/item">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover/item:bg-primary transition-colors mt-2 shrink-0" />
+                                    {link ? (
+                                        <a href={link} target="_blank" rel="noopener noreferrer" className="text-foreground/80 font-medium leading-relaxed group-hover/item:text-primary transition-colors text-sm md:text-base hover:underline">
+                                            {text}
+                                        </a>
+                                    ) : (
+                                        <p className="text-foreground/80 font-medium leading-relaxed group-hover/item:text-foreground transition-colors text-sm md:text-base">
+                                            {text}
+                                        </p>
+                                    )}
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
             </SpotlightCard>
