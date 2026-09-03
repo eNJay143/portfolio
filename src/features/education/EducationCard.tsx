@@ -14,6 +14,8 @@ interface EducationCardProps {
     index: number;
 }
 
+import SpotlightCard from "@/components/SpotlightCard";
+
 export const EducationCard = ({ education, index }: EducationCardProps) => {
     const cardRef = useRef<HTMLDivElement>(null);
 
@@ -35,7 +37,7 @@ export const EducationCard = ({ education, index }: EducationCardProps) => {
                 scrollTrigger: {
                     trigger: element,
                     start: "top 85%",
-                    toggleActions: "play none none reverse"
+                    once: true
                 }
             }
         );
@@ -43,18 +45,20 @@ export const EducationCard = ({ education, index }: EducationCardProps) => {
 
     return (
         <div ref={cardRef} className="w-full opacity-0">
-            <div className={cn(
-                "group relative flex flex-col justify-start h-full rounded-3xl backdrop-blur-xl border hover:border-primary/50 transition-all duration-500 overflow-hidden",
-                "border-black/15", "dark:border-white/10",
-                "bg-secondary/10 hover:shadow-[0_8px_40px_rgba(0,0,0,0.1)]",
-                "dark:bg-secondary/20 dark:hover:shadow-[0_8px_40px_rgba(0,0,0,0.4)]"
-            )}>
-                {/* Glow effect on hover */}
-                <div className="absolute inset-0 bg-linear-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+            <SpotlightCard 
+                className={cn(
+                    "group relative flex flex-col justify-start h-full rounded-3xl backdrop-blur-xl border hover:border-primary/50 transition-all duration-500 overflow-hidden",
+                    "border-black/15", "dark:border-white/10",
+                    "bg-black/10 hover:shadow-[0_8px_40px_rgba(0,0,0,0.1)]",
+                    "dark:bg-black/40 dark:hover:shadow-[0_8px_40px_rgba(0,0,0,0.5)]",
+                    "[--spotlight-color:rgba(0,0,0,0.15)]", "dark:[--spotlight-color:rgba(255,255,255,0.35)]"
+                )}
+                spotlightColor="var(--spotlight-color)"
+            >
 
-                <div className="p-8 md:p-10 flex flex-col h-full z-10 relative">
+                <div className="p-10 md:p-14 flex flex-col h-full z-10 relative" style={{ padding: "2.5rem" }}>
                     <div className="flex items-center gap-4 mb-6">
-                        <div className="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                        <div className="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
                             <FaGraduationCap className="w-8 h-8" />
                         </div>
                         <div>
@@ -87,7 +91,7 @@ export const EducationCard = ({ education, index }: EducationCardProps) => {
                         </div>
                     )}
                 </div>
-            </div>
+            </SpotlightCard>
         </div>
     );
 };
