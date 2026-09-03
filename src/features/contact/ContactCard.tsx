@@ -52,11 +52,11 @@ export const ContactCard = ({ contact, index }: ContactCardProps) => {
             <SpotlightCard
                 className={cn(
                     "relative flex items-center p-6 md:p-8 rounded-3xl backdrop-blur-xl border hover:border-primary/50 transition-all duration-500 overflow-hidden",
-                    "border-black/15", 
+                    "border-black/15",
                     "dark:border-white/10",
                     "bg-black/10 hover:shadow-[0_8px_40px_rgba(0,0,0,0.1)]",
                     "dark:bg-black/40 dark:hover:shadow-[0_8px_40px_rgba(0,0,0,0.5)]",
-                    "[--spotlight-color:rgba(0,0,0,0.15)]", 
+                    "[--spotlight-color:rgba(0,0,0,0.15)]",
                     "dark:[--spotlight-color:rgba(255,255,255,0.35)]",
                     "hover:bg-primary/5 dark:hover:bg-primary/10"
                 )}

@@ -49,7 +49,7 @@ export const SkillsSection = () => {
                         <SkillCard
                             key={category.title}
                             category={category}
-                            delay={300 + index * 150}
+                            delay={150 + (index % 3) * 150}
                         />
                     ))}
                 </div>
