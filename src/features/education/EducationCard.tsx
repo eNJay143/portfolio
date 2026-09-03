@@ -80,8 +80,8 @@ export const EducationCard = ({ education, index }: EducationCardProps) => {
                             </h4>
                             <div className="flex flex-col gap-3">
                                 {education.training.map((item, i) => (
-                                    <div key={i} className="flex items-start gap-3">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
+                                    <div key={i} className="flex items-center gap-3">
+                                        <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
                                         <p className="text-foreground/90 font-medium leading-relaxed">
                                             {item}
                                         </p>
