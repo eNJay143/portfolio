@@ -4,50 +4,45 @@ export interface Project {
   shortDescription: string;
   role: string;
   technologies: string[];
-  results: string;
   link?: string;
-  coverImage?: string;
+  outputImage?: string;
 }
 
 export const projectsData: Project[] = [
   {
     id: "project-1",
-    title: "Project Alpha",
-    shortDescription: "A full-stack web application designed to streamline internal company workflows.",
-    role: "Lead Full-Stack Developer",
-    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js"],
-    results: "Improved workflow efficiency by 40% and successfully deployed to over 500 active users.",
-    link: "https://github.com/yourusername/project-alpha",
-    coverImage: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
+    title: "Save and Savor",
+    shortDescription: "A personal food inventory system designed to help users efficiently manage their food supplies.",
+    role: "Assistant Developer",
+    technologies: ["C#", "Guna UI", "MySQL", "Tailwind CSS"],
+    outputImage: "./saveandsavor.png",
+    link: "https://github.com/rhuelski/Food-Inventory-System",
   },
   {
     id: "project-2",
-    title: "Data Insights Platform",
-    shortDescription: "A dashboard for visualizing real-time analytics and user engagement metrics.",
-    role: "Frontend Engineer",
-    technologies: ["React", "Chart.js", "Tailwind CSS", "Firebase"],
-    results: "Provided actionable insights that led to a 15% increase in user retention.",
-    link: "https://github.com/yourusername/data-insights",
-    coverImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
+    title: "Storya Viscans",
+    shortDescription: "A community-driven platform for Viscans to share stories, engage in social discussions, and access academic resources.",
+    role: "Backend Developer",
+    technologies: ["Next.js", "React", "Tailwind CSS", "TypeScript", "Supabase"],
+    link: "https://github.com/Kikypochiki/Storya-Viscans",
+    outputImage: "./storyaviscans.png"
   },
   {
     id: "project-3",
-    title: "E-Commerce Mobile App",
-    shortDescription: "A cross-platform mobile app for an online retail store with a seamless checkout experience.",
-    role: "Mobile App Developer",
-    technologies: ["React Native", "Expo", "Redux", "Stripe API"],
-    results: "Generated $50k in revenue within the first three months of launch.",
-    link: "https://github.com/yourusername/ecommerce-app",
-    coverImage: "https://images.unsplash.com/photo-1523206489230-c012c64b2b48?auto=format&fit=crop&w=800&q=80"
+    title: "DormPay",
+    shortDescription: "A web application designed to streamline dormitory financial transactions, enhance operational efficiency, and strengthen transparency.",
+    role: "Backend Developer",
+    technologies: ["Next.js", "React", "Tailwind CSS", "PostgreSQL", "TypeScript", "Supabase",],
+    link: "https://github.com/UISB-Dev-Team/everest-v2",
+    outputImage: "./dormpay.png"
   },
   {
     id: "project-4",
-    title: "Automated Testing Framework",
-    shortDescription: "A scalable testing suite built to automate end-to-end testing for multiple microservices.",
-    role: "QA Automation Engineer",
-    technologies: ["Python", "Selenium", "Docker", "Jenkins"],
-    results: "Reduced QA testing time by 60% and caught critical bugs before production.",
-    link: "https://github.com/yourusername/auto-test-framework",
-    coverImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80"
+    title: "Veris",
+    shortDescription: "A web appliaction that unifies membership tracking, event clearance, and student engagement tools into a single system — built for student organizations tired of running everything through spreadsheets and group chats..",
+    role: "Backend Developer",
+    technologies: ["Next.js", "React", "Tailwind CSS", "PostgreSQL", "TypeScript", "Supabase", "Firebase"],
+    link: "https://github.com/Atlas-VSU",
+    outputImage: "./veris.png "
   }
 ];

@@ -29,10 +29,10 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
                 }
             >
                 {/* Image Section */}
-                {project.coverImage && (
+                {project.outputImage && (
                     <div className="relative w-full h-48 sm:h-56 overflow-hidden shrink-0">
                         <img
-                            src={project.coverImage}
+                            src={project.outputImage}
                             alt={project.title}
                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
@@ -42,7 +42,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
                 )}
 
                 {/* Details Section */}
-                <div className="relative z-10 flex flex-col gap-4 p-7 grow">
+                <div className="relative z-10 flex flex-col gap-4 grow" style={{ padding: "1.5rem" }}>
                     <h3 className="text-2xl font-bold font-serif text-foreground/90 group-hover:text-primary transition-colors">
                         {project.title}
                     </h3>
@@ -68,6 +68,16 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
             </DialogTrigger>
 
             <DialogContent className="sm:max-w-2xl bg-background/80 backdrop-blur-2xl border-border/50 shadow-2xl rounded-3xl overflow-hidden p-0 gap-0">
+                {project.outputImage && (
+                    <div className="w-full h-64 sm:h-80 relative overflow-hidden shrink-0">
+                        <img
+                            src={project.outputImage}
+                            alt={project.title}
+                            className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-linear-to-t from-background/80 via-background/20 to-transparent" />
+                    </div>
+                )}
                 <div className="p-8 flex flex-col gap-6">
                     <DialogHeader>
                         <DialogTitle className="text-3xl font-bold font-serif text-foreground/90">{project.title}</DialogTitle>
@@ -80,11 +90,6 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
                         <div>
                             <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground/50 mb-2">My Role / Contribution</h4>
                             <p className="text-foreground/90 leading-relaxed">{project.role}</p>
-                        </div>
-
-                        <div>
-                            <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground/50 mb-2">Results / Output</h4>
-                            <p className="text-foreground/90 leading-relaxed">{project.results}</p>
                         </div>
 
                         <div>
@@ -101,7 +106,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
 
                     <div className="mt-4 pt-6 border-t border-border/30 flex justify-end">
                         {project.link ? (
-                            <Button render={<a href={project.link} target="_blank" rel="noopener noreferrer" />} className="rounded-full px-6 gap-2 bg-primary text-primary-foreground hover:bg-primary/90 transition-all hover:scale-105">
+                            <Button nativeButton={false} render={<a href={project.link} target="_blank" rel="noopener noreferrer" />} className="rounded-full px-6 gap-2 bg-primary text-primary-foreground hover:bg-primary/90 transition-all hover:scale-105">
                                 {project.link.includes('github') ? <FaGithub className="w-4 h-4" /> : <FaExternalLinkAlt className="w-4 h-4" />}
                                 View Project
                             </Button>
