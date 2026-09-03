@@ -7,7 +7,7 @@ import FoldText from "@/components/FoldText";
 
 export const SkillsSection = () => {
     return (
-        <section id="skills" className="min-h-screen flex flex-col items-center justify-start pb-12 relative overflow-hidden" style={{ paddingTop: '2vh' }}>
+        <section id="skills" className="flex flex-col items-center justify-start pb-12 relative" style={{ paddingTop: '2vh' }}>
             <div className="w-full max-w-5xl flex flex-col items-start gap-12 px-4">
                 <div>
                     <h2 className="text-3xl md:text-4xl font-bold font-serif text-foreground/90">
