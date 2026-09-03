@@ -22,8 +22,8 @@ export const ContactCard = ({ contact, index }: ContactCardProps) => {
         if (!element) return;
 
         gsap.fromTo(element,
-            { 
-                opacity: 0, 
+            {
+                opacity: 0,
                 y: 50,
             },
             {
@@ -42,14 +42,14 @@ export const ContactCard = ({ contact, index }: ContactCardProps) => {
     }, [index]);
 
     return (
-        <a 
-            ref={cardRef} 
-            href={contact.link} 
-            target="_blank" 
-            rel="noopener noreferrer" 
+        <a
+            ref={cardRef}
+            href={contact.link}
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full opacity-0 block group/contact"
         >
-            <SpotlightCard 
+            <SpotlightCard
                 className={cn(
                     "relative flex items-center p-6 md:p-8 rounded-3xl backdrop-blur-xl border hover:border-primary/50 transition-all duration-500 overflow-hidden",
                     "border-black/15 dark:border-white/10",
@@ -67,7 +67,7 @@ export const ContactCard = ({ contact, index }: ContactCardProps) => {
                         <h3 className="text-sm md:text-base font-semibold uppercase tracking-wider text-foreground/70 mb-1 group-hover/contact:text-primary transition-colors">
                             {contact.title}
                         </h3>
-                        <p className="text-base md:text-lg lg:text-xl font-bold font-sans text-foreground/90 truncate transition-colors leading-tight">
+                        <p className="text-sm font-bold font-sans text-foreground/90 truncate transition-colors leading-tight">
                             {contact.value}
                         </p>
                     </div>

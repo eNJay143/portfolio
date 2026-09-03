@@ -20,14 +20,14 @@ export const contactData: ContactItem[] = [
     {
         id: "github",
         title: "GitHub",
-        value: "github.com/eNJay143",
+        value: "eNJay143",
         link: "https://github.com/eNJay143",
         icon: FaGithub,
     },
     {
         id: "linkedin",
         title: "LinkedIn",
-        value: "linkedin.com/in/norman-john-bandibas",
+        value: "Norman John Bandibas",
         link: "https://www.linkedin.com/in/norman-john-bandibas/",
         icon: FaLinkedin,
     }
