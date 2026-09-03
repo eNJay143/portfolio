@@ -8,7 +8,7 @@ export const AchievementsSection = () => {
     return (
         <section id="achievements" className="flex flex-col items-center justify-start pb-24 relative" style={{ paddingTop: '10vh' }}>
             <div className="w-full max-w-5xl flex flex-col items-start gap-12 px-4">
-                
+
                 {/* Section Header */}
                 <div>
                     <h2 className="text-3xl md:text-4xl font-bold font-serif text-foreground/90">
@@ -48,9 +48,9 @@ export const AchievementsSection = () => {
                 {/* Grid Layout */}
                 <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10 overflow-hidden">
                     {achievementsData.map((category, index) => (
-                        <AchievementCard 
-                            key={category.id} 
-                            category={category} 
+                        <AchievementCard
+                            key={category.id}
+                            category={category}
                             index={index}
                             className={category.id === "certs" ? "md:col-span-2" : ""}
                         />

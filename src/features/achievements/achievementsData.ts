@@ -30,7 +30,8 @@ export const achievementsData: AchievementCategory[] = [
         title: "Scholarships",
         icon: FaGraduationCap,
         items: [
-            "2024 DOST-SEI Undergraduate Scholarship"
+            "2024 DOST-SEI Undergraduate Scholarship",
+            "START x DOST DataCamp Scholar"
         ]
     },
     {
@@ -38,10 +39,16 @@ export const achievementsData: AchievementCategory[] = [
         title: "Certificates and Accomplishments",
         icon: FaCertificate,
         items: [
-            { name: "Intermediate Git", pdfLink: "/certificates/intermediate-git.pdf" },
-            { name: "Intermediate GitHub Concepts", pdfLink: "/certificates/intermediate-github-concepts.pdf" },
+            { name: "Cisco Introduction to Data Science", pdfLink: "/certificates/CiscoIntroductionToDataScienceCertificate.pdf" },
+            { name: "Understanding Data Science", pdfLink: "/certificates/DataCampUnderstaningDataScienceAccomplishment.pdf" },
+            { name: "Understanding Data Visualization", pdfLink: "/certificates/DataCampUnderstaningDataVisualizationAccomplishment.pdf" },
+            { name: "Understanding Data Engineering", pdfLink: "/certificates/DataCampUnderstaningDataEngineeringAccomplishment.pdf" },
+            { name: "Understanding Machine Learning", pdfLink: "/certificates/DataCampUnderstaningMachineLearningAccomplishment.pdf" },
+            { name: "Understanding Cloud Computing", pdfLink: "/certificates/DataCampUnderstaningCloudComputingAccomplishment.pdf" },
             { name: "Introduction to Git", pdfLink: "/certificates/introduction-to-git.pdf" },
+            { name: "Intermediate Git", pdfLink: "/certificates/intermediate-git.pdf" },
             { name: "Introduction to GitHub Concepts", pdfLink: "/certificates/introduction-to-github-concepts.pdf" },
+            { name: "Intermediate GitHub Concepts", pdfLink: "/certificates/intermediate-github-concepts.pdf" },
             { name: "Introduction to SQL", pdfLink: "/certificates/introduction-to-sql.pdf" }
         ]
     }
