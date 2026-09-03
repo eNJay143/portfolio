@@ -6,7 +6,7 @@ export const ProjectsSection = () => {
     return (
         <section id="projects" className="flex flex-col items-center justify-start pb-24 relative" style={{ paddingTop: '10vh' }}>
             <div className="w-full max-w-5xl flex flex-col items-start gap-12 px-4">
-                
+
                 {/* Section Header */}
                 <div>
                     <h2 className="text-3xl md:text-4xl font-bold font-serif text-foreground/90">
@@ -44,9 +44,9 @@ export const ProjectsSection = () => {
                 </div>
 
                 {/* 2x2 Grid Layout */}
-                <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
-                    {projectsData.map((project) => (
-                        <ProjectCard key={project.id} project={project} />
+                <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10 overflow-hidden">
+                    {projectsData.map((project, index) => (
+                        <ProjectCard key={project.id} project={project} index={index} />
                     ))}
                 </div>
 

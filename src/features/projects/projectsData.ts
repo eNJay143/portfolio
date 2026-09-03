@@ -5,6 +5,7 @@ export interface Project {
   role: string;
   technologies: string[];
   link?: string;
+  deployedLink?: string;
   outputImage?: string;
 }
 
@@ -33,8 +34,9 @@ export const projectsData: Project[] = [
     shortDescription: "A web application designed to streamline dormitory financial transactions, enhance operational efficiency, and strengthen transparency.",
     role: "Backend Developer",
     technologies: ["Next.js", "React", "Tailwind CSS", "PostgreSQL", "TypeScript", "Supabase",],
-    link: "https://github.com/UISB-Dev-Team/everest-v2",
-    outputImage: "./dormpay.png"
+    link: "",
+    outputImage: "./dormpay.png",
+    deployedLink: "https://dormpay-system.vercel.app/"
   },
   {
     id: "project-4",
@@ -43,6 +45,7 @@ export const projectsData: Project[] = [
     role: "Backend Developer",
     technologies: ["Next.js", "React", "Tailwind CSS", "PostgreSQL", "TypeScript", "Supabase", "Firebase"],
     link: "https://github.com/Atlas-VSU",
-    outputImage: "./veris.png "
+    outputImage: "./veris.png ",
+    deployedLink: "https://veris-dev.fc-ssc.online/"
   }
 ];
