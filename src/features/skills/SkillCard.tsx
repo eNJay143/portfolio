@@ -1,6 +1,11 @@
 "use client";
 
 import { SkillCategory } from "./skillsData";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface SkillCardProps {
     category: SkillCategory;
@@ -8,13 +13,39 @@ interface SkillCardProps {
 }
 
 export const SkillCard = ({ category, delay = 0 }: SkillCardProps) => {
+    const cardRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const ctx = gsap.context(() => {
+            gsap.fromTo(cardRef.current,
+                { opacity: 0, y: 30, scale: 0.95 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 0.7,
+                    delay: delay / 1000, // keep the delay so the initial stagger remains
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: cardRef.current,
+                        start: "top 85%",
+                        once: true
+                    }
+                }
+            );
+        }, cardRef);
+
+        return () => ctx.revert();
+    }, [delay]);
+
     return (
         <div
-            className="group relative flex flex-col gap-6 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 hover:bg-white/[0.07] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_8px_40px_rgba(0,0,0,0.4)] animate-in fade-in zoom-in-95 fill-mode-both overflow-hidden"
-            style={{ animationDelay: `${delay}ms`, animationDuration: '700ms', padding: '2rem' }}
+            ref={cardRef}
+            className="group relative flex flex-col gap-6 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-white/20 hover:bg-white/[0.07] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_8px_40px_rgba(0,0,0,0.4)] overflow-hidden opacity-0"
+            style={{ padding: '2rem' }}
         >
             {/* Subtle glow effect behind the title that fades in on hover */}
-            <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+            <div className="absolute top-0 left-0 w-full h-32 bg-linear-to-b from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
             <h3 className="relative z-10 flex items-center gap-4 text-xl md:text-2xl font-bold text-foreground/90 font-serif border-b border-white/10 pb-4 transition-colors group-hover:text-foreground">
                 {category.icon && (
