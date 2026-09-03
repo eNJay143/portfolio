@@ -285,17 +285,24 @@ export default function PixelCard({
   return (
     <div
       ref={containerRef}
-      className={cn("group w-full h-full relative overflow-hidden border border-[var(--pixel-card-border,#27272a)] bg-[var(--pixel-card-background,transparent)] rounded-[25px] isolate transition-colors duration-200 ease-[cubic-bezier(0.5,1,0.89,1)] select-none", className)}
+      className={cn("group w-full h-full relative overflow-hidden border border-[--pixel-card-border,#27272a] bg-[--pixel-card-background,transparent] rounded-[25px] isolate transition-colors duration-200 ease-[cubic-bezier(0.5,1,0.89,1)] select-none", className)}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       onFocus={finalNoFocus ? undefined : onFocus}
       onBlur={finalNoFocus ? undefined : onBlur}
       tabIndex={finalNoFocus ? -1 : 0}
     >
-      {/* eslint-disable-next-line tailwindcss/no-contradicting-classname */}
       <div
-        className="absolute inset-0 m-auto aspect-square bg-[radial-gradient(circle,var(--pixel-card-active-color,#f3f4f6),transparent_85%)] dark:bg-[radial-gradient(circle,#09090b,transparent_85%)] opacity-0 transition-opacity duration-800 ease-[cubic-bezier(0.5,1,0.89,1)] group-hover:opacity-100 group-focus-within:opacity-100 z-0 pointer-events-none"
-        style={variantCfg.activeColor ? { '--pixel-card-active-color': variantCfg.activeColor } as React.CSSProperties : undefined}
+        className={cn(
+          "absolute inset-0 m-auto aspect-square z-0 pointer-events-none dark:bg-[radial-gradient(circle,#09090b,transparent_85%)]!",
+          "transition-opacity duration-800 ease-[cubic-bezier(0.5,1,0.89,1)]",
+          "opacity-0",
+          "group-hover:opacity-100 group-focus-within:opacity-100"
+        )}
+        style={{
+          backgroundImage: `radial-gradient(circle, var(--pixel-card-active-color, #f3f4f6), transparent 85%)`,
+          ...(variantCfg.activeColor ? { '--pixel-card-active-color': variantCfg.activeColor } : {})
+        } as React.CSSProperties}
       />
       <canvas className="absolute inset-0 w-full h-full block z-0 pointer-events-none" ref={canvasRef} />
       <div className="relative z-10 w-full h-full">
