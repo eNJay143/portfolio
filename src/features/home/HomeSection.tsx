@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { careerInterests } from "./data";
+import ShinyText from "@/components/ShinyText";
 
 export const HomeSection = () => {
     const fullText = "Building software to solve problems";
@@ -74,12 +75,28 @@ export const HomeSection = () => {
                 {/* Short Introduction with Typewriter Effect */}
                 <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold font-serif tracking-tight min-h-30 md:min-h-25 leading-tight text-center self-center w-full flex items-center justify-center">
                     <div className="w-full">
-                        <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-blue-500">
-                            {displayedText}
+                        <span className="relative inline-block">
+                            <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-blue-500">
+                                {displayedText}
+                            </span>
+
+                            {!isTyping && (
+                                <ShinyText
+                                    text={fullText}
+                                    disabled={false}
+                                    delay={0.5}
+                                    direction="left"
+                                    speed={3}
+                                    color="transparent"
+                                    shineColor="rgba(255,255,255,0.7)"
+                                    className="absolute inset-0 left-0 top-0 pointer-events-none"
+                                />
+                            )}
+
+                            {isTyping && (
+                                <span className="inline-block w-1 h-[1em] ml-1 bg-primary animate-pulse align-middle shrink-0"></span>
+                            )}
                         </span>
-                        {isTyping && (
-                            <span className="inline-block w-1 h-[1em] ml-1 bg-primary animate-pulse align-middle shrink-0"></span>
-                        )}
                     </div>
                 </h1>
 
