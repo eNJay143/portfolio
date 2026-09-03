@@ -50,7 +50,8 @@ export const ProjectCard = ({ project, index }: ProjectCardProps) => {
                     nativeButton={false}
                     render={
                         <div className={cn(
-                            "group relative flex flex-col justify-start h-full rounded-b-3xl backdrop-blur-xl border border-black/15 dark:border-white/10 hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 overflow-hidden cursor-pointer",
+                            "group relative flex flex-col justify-start h-full rounded-b-3xl backdrop-blur-xl border hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 overflow-hidden cursor-pointer",
+                            "border-black/15", "dark:border-white/10",
                             "bg-secondary/10 hover:shadow-[0_8px_40px_rgba(0,0,0,0.1)]",
                             "dark:bg-secondary/20 dark:hover:shadow-[0_8px_40px_rgba(0,0,0,0.4)]"
                         )}
