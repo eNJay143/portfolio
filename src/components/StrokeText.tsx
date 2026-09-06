@@ -105,9 +105,9 @@ const StrokeText = ({
 
       setBox(prev =>
         prev &&
-        Math.abs(prev.x - next.x) < 0.5 &&
-        Math.abs(prev.width - next.width) < 0.5 &&
-        Math.abs(prev.y - next.y) < 0.5
+          Math.abs(prev.x - next.x) < 0.5 &&
+          Math.abs(prev.width - next.width) < 0.5 &&
+          Math.abs(prev.y - next.y) < 0.5
           ? prev
           : next
       );
@@ -115,7 +115,7 @@ const StrokeText = ({
 
     measure();
     if (typeof document !== 'undefined' && document.fonts?.ready) {
-      document.fonts.ready.then(measure).catch(() => {});
+      document.fonts.ready.then(measure).catch(() => { });
     }
 
     return () => {
@@ -229,7 +229,7 @@ const StrokeText = ({
   return (
     <span
       ref={rootRef}
-      className={`block w-full leading-[0] ${trigger === 'hover' ? 'cursor-pointer' : ''} ${className}`.trim()}
+      className={`block w-full leading-0 ${trigger === 'hover' ? 'cursor-pointer' : ''} ${className}`.trim()}
       style={style}
       role="img"
       aria-label={String(text ?? '')}

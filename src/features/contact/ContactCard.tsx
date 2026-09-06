@@ -34,7 +34,7 @@ export const ContactCard = ({ contact, index }: ContactCardProps) => {
                 ease: "power3.out",
                 scrollTrigger: {
                     trigger: element,
-                    start: "top 90%",
+                    start: "top bottom",
                     once: true
                 }
             }
