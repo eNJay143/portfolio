@@ -57,7 +57,7 @@ export const ContactCard = ({ contact, index }: ContactCardProps) => {
                     "bg-black/10 hover:shadow-[0_8px_40px_rgba(0,0,0,0.1)]",
                     "dark:bg-black/40 dark:hover:shadow-[0_8px_40px_rgba(0,0,0,0.5)]",
                     "[--spotlight-color:rgba(0,0,0,0.15)]",
-                    "dark:[--spotlight-color:rgba(255,255,255,0.35)]",
+                    "dark:[--spotlight-color:rgba(255,255,255,0.15)]",
                     "hover:bg-primary/5 dark:hover:bg-primary/10"
                 )}
             >
