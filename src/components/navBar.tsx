@@ -13,7 +13,7 @@ const NavBar = () => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 20);
         };
-        
+
         handleScroll(); // Initial check
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
@@ -53,18 +53,16 @@ const NavBar = () => {
     };
 
     return (
-        <div 
-            className={`w-full mx-auto sticky top-4 mt-4 z-50 transition-all duration-300 ${
-                isScrolled ? "max-w-7xl px-4 sm:px-6 lg:px-8" : "max-w-full px-0"
-            }`}
+        <div
+            className={`w-full mx-auto sticky top-4 mt-4 z-50 transition-all duration-300 ${isScrolled ? "max-w-7xl px-4 sm:px-6 lg:px-8" : "max-w-[1920px] px-0"
+                }`}
         >
             <nav
                 style={{ paddingLeft: "24px", paddingRight: "24px" }}
-                className={`w-full transition-all duration-300 border ${
-                    isScrolled
-                        ? "bg-background border-border shadow-lg rounded-2xl"
-                        : "bg-transparent border-transparent shadow-none rounded-none"
-                }`}
+                className={`w-full transition-all duration-300 border ${isScrolled
+                    ? "bg-background border-border shadow-lg rounded-2xl"
+                    : "bg-transparent border-transparent shadow-none rounded-none"
+                    }`}
             >
                 <div className="w-full transition-all duration-300">
                     <div className="flex justify-between items-center h-14.75">
