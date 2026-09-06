@@ -105,9 +105,9 @@ const StrokeText = ({
 
       setBox(prev =>
         prev &&
-        Math.abs(prev.x - next.x) < 0.5 &&
-        Math.abs(prev.width - next.width) < 0.5 &&
-        Math.abs(prev.y - next.y) < 0.5
+          Math.abs(prev.x - next.x) < 0.5 &&
+          Math.abs(prev.width - next.width) < 0.5 &&
+          Math.abs(prev.y - next.y) < 0.5
           ? prev
           : next
       );
@@ -115,7 +115,7 @@ const StrokeText = ({
 
     measure();
     if (typeof document !== 'undefined' && document.fonts?.ready) {
-      document.fonts.ready.then(measure).catch(() => {});
+      document.fonts.ready.then(measure).catch(() => { });
     }
 
     return () => {
@@ -229,14 +229,14 @@ const StrokeText = ({
   return (
     <span
       ref={rootRef}
-      className={`block w-full leading-[0] ${trigger === 'hover' ? 'cursor-pointer' : ''} ${className}`.trim()}
+      className={`block w-full leading-0 ${trigger === 'hover' ? 'cursor-pointer' : ''} ${className}`.trim()}
       style={style}
       role="img"
       aria-label={String(text ?? '')}
     >
       <svg
         className="block w-full"
-        style={{ height: `${Math.round(fontSize * 1.3)}px` }}
+        style={{ height: `${Math.round(fontSize * 1.3)}px`, transform: "translateZ(0)", willChange: "transform" }}
         viewBox={viewBox}
         preserveAspectRatio="xMidYMid meet"
         aria-hidden="true"
@@ -259,10 +259,10 @@ const StrokeText = ({
           strokeWidth={strokeWidth}
           strokeLinejoin="round"
           strokeLinecap="round"
-          style={fontStyle}
+          style={{ ...fontStyle, transform: "translateZ(0)", willChange: "transform" }}
         >
           {characters.map((char, index) => (
-            <tspan data-stroke-char key={`s-${index}`} style={{ strokeDasharray: dash, strokeDashoffset: dash }}>
+            <tspan data-stroke-char key={`s-${index}`} style={{ strokeDasharray: dash, strokeDashoffset: dash, willChange: "stroke-dashoffset" }}>
               {char}
             </tspan>
           ))}
@@ -274,11 +274,11 @@ const StrokeText = ({
           y="0"
           fill={fillColor}
           stroke="none"
-          style={fontStyle}
+          style={{ ...fontStyle, transform: "translateZ(0)", willChange: "opacity, transform" }}
           clipPath={fillMode === 'wipe' && box ? `url(#${wipeId})` : undefined}
         >
           {characters.map((char, index) => (
-            <tspan data-fill-char key={`f-${index}`} style={{ opacity: fillMode === 'wipe' ? 1 : 0 }}>
+            <tspan data-fill-char key={`f-${index}`} style={{ opacity: fillMode === 'wipe' ? 1 : 0, willChange: "opacity" }}>
               {char}
             </tspan>
           ))}

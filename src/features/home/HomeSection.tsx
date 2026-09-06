@@ -45,7 +45,7 @@ export const HomeSection = () => {
     }, [isScrollLocked]);
 
     return (
-        <section id="home" className="min-h-screen flex flex-col items-center justify-start pb-12 relative overflow-hidden" style={{ paddingTop: '15vh' }}>
+        <section id="home" className="flex flex-col items-center justify-start pb-12 pt-16 md:pt-24 min-h-[40rem] md:min-h-[50rem] relative overflow-hidden" style={{ paddingTop: "11rem" }}>
 
             {/* Background glowing effects for premium feel */}
             <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-primary/20 rounded-full blur-[100px] -z-10" />
@@ -75,7 +75,7 @@ export const HomeSection = () => {
 
                 {/* Two Column Layout for Desktop */}
                 {!isIntroAnimating && (
-                    <div className="flex flex-col md:flex-row items-center md:items-start w-full gap-8 md:gap-12">
+                    <div className="flex flex-col md:flex-row items-center md:items-start w-full gap-8 md:gap-12" style={{ marginTop: "4rem" }}>
 
                         {/* Left Side: Avatar Picture */}
                         <div className="shrink-0 animate-in fade-in zoom-in duration-1000" style={{ animationFillMode: 'backwards' }}>

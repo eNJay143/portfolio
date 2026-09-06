@@ -6,7 +6,9 @@ import FoldText from "@/components/FoldText";
 
 export const AchievementsSection = () => {
     return (
-        <section id="achievements" className="flex flex-col items-center justify-start pb-24 relative" style={{ paddingTop: '10vh' }}>
+        <section id="achievements" className="flex flex-col items-center justify-start pb-24 pt-24 md:pt-32 relative"
+            style={{ paddingTop: "4rem" }}
+        >
             <div className="w-full max-w-5xl flex flex-col items-start gap-12 px-4">
 
                 {/* Section Header */}

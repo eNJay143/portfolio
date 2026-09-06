@@ -51,7 +51,7 @@ export const EducationCard = ({ education, index }: EducationCardProps) => {
                     "border-black/15", "dark:border-white/10",
                     "bg-black/10 hover:shadow-[0_8px_40px_rgba(0,0,0,0.1)]",
                     "dark:bg-black/40 dark:hover:shadow-[0_8px_40px_rgba(0,0,0,0.5)]",
-                    "[--spotlight-color:rgba(0,0,0,0.15)]", "dark:[--spotlight-color:rgba(255,255,255,0.35)]"
+                    "[--spotlight-color:rgba(0,0,0,0.15)]", "dark:[--spotlight-color:rgba(255,255,255,0.15)]"
                 )}
                 spotlightColor="var(--spotlight-color)"
             >
