@@ -27,6 +27,11 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `
+              if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+              }
+              window.scrollTo(0, 0);
+
               try {
                 if (localStorage.getItem('theme') === 'light') {
                   document.documentElement.classList.remove('dark');
