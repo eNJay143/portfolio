@@ -3,6 +3,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import NavBar from "@/components/navBar";
+import ScrollToTop from "@/components/ScrollToTop";
 import "./globals.css";
 
 const fontSans = Inter({
@@ -36,6 +37,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${fontSans.variable} font-sans antialiased w-full min-h-screen flex flex-col items-center`}>
+        <ScrollToTop />
         <NavBar />
         <main className="w-full flex-1 flex flex-col items-center">
           {children}
